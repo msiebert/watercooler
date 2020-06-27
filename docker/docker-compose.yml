@@ -8,3 +8,12 @@ services:
       - ../web/:/app
     ports:
       - "8080:8080"
+
+  client:
+    build:
+      context: client/
+    volumes:
+      - ../client:/app
+    ports:
+      - "8081:8081"
+    stdin_open: true
