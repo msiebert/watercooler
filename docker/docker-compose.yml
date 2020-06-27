@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  rocket:
+    build:
+      context: rocket/
+    volumes:
+      - ../web/:/app
+    ports:
+      - "8080:8080"
