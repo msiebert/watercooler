@@ -1,7 +1,7 @@
 #![feature(proc_macro_hygiene, decl_macro)]
 
-use std::collections::HashMap;
 use rocket_contrib::templates::Template;
+use std::collections::HashMap;
 
 #[macro_use]
 extern crate rocket;
