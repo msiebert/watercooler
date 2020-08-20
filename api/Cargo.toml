@@ -1,5 +1,5 @@
 [package]
-name = "water-cooler-web"
+name = "water-cooler-api"
 version = "0.1.0"
 authors = ["Mark Siebert <mark@bluematador.com>"]
 edition = "2018"

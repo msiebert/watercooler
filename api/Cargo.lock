@@ -1180,7 +1180,7 @@ version = "0.9.0+wasi-snapshot-preview1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
-name = "water-cooler-web"
+name = "water-cooler-api"
 version = "0.1.0"
 dependencies = [
  "rocket 0.4.5 (registry+https://github.com/rust-lang/crates.io-index)",

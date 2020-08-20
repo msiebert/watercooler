@@ -5,5 +5,3 @@ ENV PORT=8081
 
 WORKDIR "/app"
 VOLUME "/app"
-
-CMD ["yarn", "start"]
