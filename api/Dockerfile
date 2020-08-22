@@ -6,7 +6,7 @@ RUN groupadd -r user --gid="1000" \
 
 WORKDIR /app
 
-RUN cargo install diesel_cli --no-default-features --features mysql
+RUN cargo install diesel_cli --no-default-features --features postgres
 
 RUN cargo install cargo-watch
 

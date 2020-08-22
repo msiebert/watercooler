@@ -1,4 +1,4 @@
-version: '3.4'
+version: "3.4"
 
 services:
   api:
@@ -7,7 +7,11 @@ services:
       - ./api/:/app
     ports:
       - "8080:8080"
-    command: cargo watch -x run
+    links:
+      - db
+    environment:
+      - "DATABASE_URL=postgres://postgres:supersecretpassword@db/watercooler"
+    command: bash -c "bash ./wait-for-it.sh db:3306 -q -- diesel setup && cargo watch -x run"
 
   web:
     build: ./web
@@ -16,4 +20,14 @@ services:
     ports:
       - "8081:8081"
     stdin_open: true
-    command: yarn start
+    command: bash -c "yarn install && yarn start"
+
+  db:
+    image: postgres:13
+    ports:
+      - "5432:5432"
+    volumes:
+      - ././volumes/pgdata:/var/lib/postgresql/data/pgdata
+    environment:
+      POSTGRES_PASSWORD: supersecretpassword
+      PGDATA: /var/lib/postgresql/data/pgdata
