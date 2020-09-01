@@ -8,3 +8,4 @@ watercooler.code-workspace
 **/*.rs.bk
 
 .volumes
+.vscode

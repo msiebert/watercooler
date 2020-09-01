@@ -1,5 +1,5 @@
 [package]
-name = "water-cooler-api"
+name = "watercooler"
 version = "0.1.0"
 authors = ["Mark Siebert <mark@bluematador.com>"]
 edition = "2018"
@@ -7,10 +7,11 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+chrono = "0.4"
+diesel = { version = "1.4.1", features = ["postgres", "chrono"] }
+ring = "0.16.15"
 rocket = "0.4.5"
-diesel = { version = "1.4.1", features = ["postgres"] }
-serde = "1.0"
-serde_derive = "1.0"
+serde = { version = "1.0", features = ["derive"] }
 
 [dependencies.rocket_contrib]
 version = "0.4.5"
