@@ -7,7 +7,9 @@ CREATE TABLE users (
     last VARCHAR NOT NULL,
     created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     deleted TIMESTAMP,
-    password VARCHAR NOT NULL,
+    password BYTEA NOT NULL,
+    salt BYTEA NOT NULL,
+    num_iterations INTEGER NOT NULL,
     owner BOOLEAN NOT NULL,
     PRIMARY KEY(id)
 );

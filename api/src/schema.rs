@@ -6,7 +6,9 @@ table! {
         last -> Varchar,
         created -> Timestamp,
         deleted -> Nullable<Timestamp>,
-        password -> Varchar,
+        password -> Bytea,
+        salt -> Bytea,
+        num_iterations -> Int4,
         owner -> Bool,
     }
 }

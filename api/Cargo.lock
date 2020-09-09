@@ -194,9 +194,9 @@ checksum = "4785bdd1c96b2a846b2bd7cc02e86b6b3dbf14e7e53446c4f54c92a361040822"
 
 [[package]]
 name = "chrono"
-version = "0.4.11"
+version = "0.4.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "80094f509cf8b5ae86a4966a39b3ff66cd7e2a3e594accec3743ff3fabeab5b2"
+checksum = "942f72db697d8767c22d46a598e01f2d3b475501ea43d0db4f16d90259182d0b"
 dependencies = [
  "num-integer",
  "num-traits",
@@ -494,7 +494,7 @@ dependencies = [
  "traitobject",
  "typeable",
  "unicase",
- "url",
+ "url 1.7.2",
 ]
 
 [[package]]
@@ -507,6 +507,23 @@ dependencies = [
  "unicode-bidi",
  "unicode-normalization",
 ]
+
+[[package]]
+name = "idna"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "02e2673c30ee86b5b96a9cb52ad15718aa1f966f5ab9ad54a8b95d5ca33120a9"
+dependencies = [
+ "matches",
+ "unicode-bidi",
+ "unicode-normalization",
+]
+
+[[package]]
+name = "if_chain"
+version = "1.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c3360c7b59e5ffa2653671fb74b4741a5d343c03f331c0a4aeda42b5c2b0ec7d"
 
 [[package]]
 name = "indexmap"
@@ -1172,18 +1189,18 @@ checksum = "d29ab0c6d3fc0ee92fe66e2d99f700eab17a8d57d1c1d3b748380fb20baa78cd"
 
 [[package]]
 name = "serde"
-version = "1.0.114"
+version = "1.0.115"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5317f7588f0a5078ee60ef675ef96735a1442132dc645eb1d12c018620ed8cd3"
+checksum = "e54c9a88f2da7238af84b5101443f0c0d0a3bbdc455e34a5c9497b1903ed55d5"
 dependencies = [
  "serde_derive",
 ]
 
 [[package]]
 name = "serde_derive"
-version = "1.0.114"
+version = "1.0.115"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2a0be94b04690fbaed37cddffc5c134bf537c8e3329d53e982fe04c374978f8e"
+checksum = "609feed1d0a73cc36a0182a840a9b37b4a82f0b1150369f0536a9e3f2a31dc48"
 dependencies = [
  "proc-macro2 1.0.18",
  "quote 1.0.7",
@@ -1310,7 +1327,7 @@ dependencies = [
  "serde_json",
  "slug",
  "unic-segment",
- "url",
+ "url 1.7.2",
 ]
 
 [[package]]
@@ -1482,9 +1499,50 @@ version = "1.7.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "dd4e7c0d531266369519a4aa4f399d748bd37043b00bde1e4ff1f60a120b355a"
 dependencies = [
- "idna",
+ "idna 0.1.5",
  "matches",
  "percent-encoding 1.0.1",
+]
+
+[[package]]
+name = "url"
+version = "2.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "829d4a8476c35c9bf0bbce5a3b23f4106f79728039b726d292bb93bc106787cb"
+dependencies = [
+ "idna 0.2.0",
+ "matches",
+ "percent-encoding 2.1.0",
+]
+
+[[package]]
+name = "validator"
+version = "0.10.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e60fadf92c22236de4028ceb0b8af50ed3430d41ad43d7a7d63b6bd1a8f47c38"
+dependencies = [
+ "idna 0.2.0",
+ "lazy_static",
+ "regex",
+ "serde",
+ "serde_derive",
+ "serde_json",
+ "url 2.1.1",
+]
+
+[[package]]
+name = "validator_derive"
+version = "0.10.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0d577dfb8ca9440a5c0b053d5a19b68f5c92ef57064bac87c8205c3f6072c20f"
+dependencies = [
+ "if_chain",
+ "lazy_static",
+ "proc-macro2 1.0.18",
+ "quote 1.0.7",
+ "regex",
+ "syn 1.0.33",
+ "validator",
 ]
 
 [[package]]
@@ -1586,6 +1644,8 @@ dependencies = [
  "rocket",
  "rocket_contrib",
  "serde",
+ "validator",
+ "validator_derive",
 ]
 
 [[package]]
