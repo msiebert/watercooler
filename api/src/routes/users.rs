@@ -45,11 +45,7 @@ pub fn first_user(new_user: Json<NewUser>, conn: db::Conn) -> Result<JsonValue, 
                         true,
                     )
                     .map_err(|_| Status::InternalServerError)
-                    .map(|user| {
-                        json!({
-                            "test": new_user.email,
-                        })
-                    })
+                    .map(|user| json!(user))
                 } else {
                     Err(Status::Forbidden)
                 }
